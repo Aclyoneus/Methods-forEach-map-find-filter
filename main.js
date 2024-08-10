@@ -1,34 +1,34 @@
 // 1
 
-// function getDeltaFunction(numbersObject) {
-//     let a = numbersObject.a;
-//     let b = numbersObject.b;
-//     let c = numbersObject.c;
-//
-//     function getDelta(newNumbersObject) {
-//         if (newNumbersObject.a !== undefined) {
-//             a = newNumbersObject.a;
-//         }
-//         if (newNumbersObject.b !== undefined) {
-//             b = newNumbersObject.b;
-//         }
-//         if (newNumbersObject.c !== undefined) {
-//             c = newNumbersObject.c;
-//         }
-//         return deltaFunction = (b * b) - 4 * a * c;
-//     }
-//     return getDelta;
-// }
-//
-// const getDelta = getDeltaFunction({ a: 1, b: 2, c: 3 });
-// console.log(getDelta()); // -8
-// console.log(getDelta({ b: 12 })); // 132
-// console.log(getDelta({ a: 4, b: 10 })); // 52
-// console.log(getDelta({ a: 4, b: 0 })); // -48
-//
-// // The nested function returns NaN if any of the arguments are missing
-// console.log(getDeltaFunction({ a: 1, c: 3 })()); // NaN
-// console.log(getDeltaFunction({ a: 1, c: 3 })({ b: 15 })); // 213
+function getDeltaFunction(numbersObject) {
+    let a = numbersObject.a;
+    let b = numbersObject.b;
+    let c = numbersObject.c;
+
+    function getDelta(newNumbersObject = {}) {
+        if (newNumbersObject.a !== undefined) {
+            a = newNumbersObject.a;
+        }
+        if (newNumbersObject.b !== undefined) {
+            b = newNumbersObject.b;
+        }
+        if (newNumbersObject.c !== undefined) {
+            c = newNumbersObject.c;
+        }
+        return (b * b) - 4 * a * c;
+    }
+    return getDelta;
+}
+
+const getDelta = getDeltaFunction({ a: 1, b: 2, c: 3 });
+console.log(getDelta()); // -8
+console.log(getDelta({ b: 12 })); // 132
+console.log(getDelta({ a: 4, b: 10 })); // 52
+console.log(getDelta({ a: 4, b: 0 })); // -48
+
+// The nested function returns NaN if any of the arguments are missing
+console.log(getDeltaFunction({ a: 1, c: 3 })()); // NaN
+console.log(getDeltaFunction({ a: 1, c: 3 })({ b: 15 })); // 213
 
 // 2
 
@@ -52,7 +52,7 @@ function countSheeps(sheepArray) {
         if (isSheepPresent === true) {
             sheepSum = sheepSum + 1;
         }
-    })
+    });
     return sheepSum;
 }
 
@@ -79,8 +79,20 @@ function getDoubledNumbers(numberArray) {
     const doubledNumbersArray = [];
     numberArray.map(function(number) {
         return doubledNumbersArray.push(number * 2);
-    })
+    });
     return doubledNumbersArray;
 }
 
 console.log(getDoubledNumbers([1, 2, 3]));
+
+// 6
+
+function getInvertedNumbersArray(numbersArray) {
+    const invertedNumbersArray = [];
+    numbersArray.map(function(number) {
+        return invertedNumbersArray.push(number * -1);
+    });
+    return invertedNumbersArray;
+}
+
+console.log(getInvertedNumbersArray([1, -2, 3, -4, 5]));
