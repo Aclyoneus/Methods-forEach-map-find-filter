@@ -108,3 +108,27 @@ function calculateAverage(marksArray) {
 }
 
 console.log(calculateAverage([1, 2, 3, 4, 5]));
+
+// 9
+
+function forEach(array, functionName) {
+    for (let i = 0; i < array.length; i++) {
+        functionName(array[i], i);
+    }
+}
+
+const vegetables = ['Carrot', 'Cabbage', 'Onion'];
+
+function printVegetable(vegetable, index) {
+    console.log(vegetable, index);
+}
+
+forEach(vegetables, printVegetable);
+
+const fruits = ['Apple', 'Orange', 'Watermelon'];
+forEach(
+    fruits,
+    function(fruit, index) {
+        console.log(fruit, index);
+    }
+)
