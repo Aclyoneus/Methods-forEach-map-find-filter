@@ -96,3 +96,15 @@ function getInvertedNumbersArray(numbersArray) {
 }
 
 console.log(getInvertedNumbersArray([1, -2, 3, -4, 5]));
+
+// 7
+
+function calculateAverage(marksArray) {
+    let sum = 0
+    marksArray.forEach(function(number) {
+        sum = sum + number;
+    });
+    return Math.floor(sum / marksArray.length);
+}
+
+console.log(calculateAverage([1, 2, 3, 4, 5]));
