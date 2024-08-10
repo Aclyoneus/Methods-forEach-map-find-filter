@@ -47,13 +47,9 @@ console.log(getPositiveSum([1,2,3,4,5]));
 // 3
 
 function countSheeps(sheepArray) {
-    let sheepSum = 0;
-    sheepArray.filter(function(isSheepPresent) {
-        if (isSheepPresent === true) {
-            sheepSum = sheepSum + 1;
-        }
-    });
-    return sheepSum;
+    return sheepArray.filter(function(isSheepPresent) {
+        return isSheepPresent === true;
+    }).length;
 }
 
 console.log(countSheeps([true,  true,  true,  false,
@@ -76,11 +72,9 @@ console.log(findNeedleIndex(['283497238987234', 'a dog', 'a cat', 'some random j
 // 5
 
 function getDoubledNumbers(numberArray) {
-    const doubledNumbersArray = [];
-    numberArray.map(function(number) {
-        return doubledNumbersArray.push(number * 2);
+    return numberArray.map(function(number) {
+        return number * 2;
     });
-    return doubledNumbersArray;
 }
 
 console.log(getDoubledNumbers([1, 2, 3]));
@@ -88,11 +82,9 @@ console.log(getDoubledNumbers([1, 2, 3]));
 // 6
 
 function getInvertedNumbersArray(numbersArray) {
-    const invertedNumbersArray = [];
-    numbersArray.map(function(number) {
-        return invertedNumbersArray.push(number * -1);
+    return numbersArray.map(function(number) {
+        return number * -1;
     });
-    return invertedNumbersArray;
 }
 
 console.log(getInvertedNumbersArray([1, -2, 3, -4, 5]));
@@ -103,7 +95,7 @@ function calculateAverage(marksArray) {
     let sum = 0
     marksArray.forEach(function(number) {
         sum = sum + number;
-    });
+    })
     return Math.floor(sum / marksArray.length);
 }
 
@@ -147,7 +139,7 @@ forEach(
 // 10
 
 function executeAfterFiveSeconds(functionName, milliseconds = 5000) {
-    return setTimeout(sayHello, milliseconds);
+    return setTimeout(functionName, milliseconds);
 }
 
 function sayHello() {
