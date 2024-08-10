@@ -35,7 +35,7 @@
 function getPositiveSum(numbersArray) {
     let positiveSum = 0
     numbersArray.forEach(function(number) {
-        if (number > 0 ) {
+        if (number > 0) {
             positiveSum = positiveSum + number;
         }
     })
@@ -43,3 +43,22 @@ function getPositiveSum(numbersArray) {
 }
 
 console.log(getPositiveSum([1,2,3,4,5]));
+
+// 3
+
+function countSheeps(sheepArray) {
+    let sheepSum = 0;
+    sheepArray.filter(function(isSheepPresent) {
+        if (isSheepPresent === true) {
+            sheepSum = sheepSum + 1;
+        }
+    })
+    return sheepSum;
+}
+
+console.log(countSheeps([true,  true,  true,  false,
+    true,  true,  true,  true ,
+    true,  false, true,  false,
+    true,  false, false, true ,
+    true,  true,  true,  true ,
+    false, false, true,  true]));
