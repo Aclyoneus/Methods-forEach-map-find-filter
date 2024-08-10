@@ -109,6 +109,17 @@ function calculateAverage(marksArray) {
 
 console.log(calculateAverage([1, 2, 3, 4, 5]));
 
+// 8
+
+function isStringInArray(stringArray, searchedString) {
+    return stringArray.find(function(string) {
+        return string === searchedString;
+    }) === searchedString;
+}
+
+console.log(isStringInArray(['Orange', 'Apple'], 'Apple'));
+console.log(isStringInArray(['Onion', 'Cabbage'], 'Potato'));
+
 // 9
 
 function forEach(array, functionName) {
