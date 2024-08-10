@@ -62,3 +62,13 @@ console.log(countSheeps([true,  true,  true,  false,
     true,  false, false, true ,
     true,  true,  true,  true ,
     false, false, true,  true]));
+
+// 4
+
+function findNeedleIndex(haystackArray) {
+    return 'found the needle at position ' + haystackArray.findIndex(function(string) {
+        return string === 'needle';
+    });
+}
+
+console.log(findNeedleIndex(['283497238987234', 'a dog', 'a cat', 'some random junk', 'a piece of hay', 'needle', 'something somebody lost a while ago']));
