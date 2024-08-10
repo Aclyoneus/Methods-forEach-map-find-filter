@@ -143,3 +143,15 @@ forEach(
         console.log(fruit, index);
     }
 )
+
+// 10
+
+function executeAfterFiveSeconds(functionName, milliseconds = 5000) {
+    return setTimeout(sayHello, milliseconds);
+}
+
+function sayHello() {
+    console.log('Hello!');
+}
+
+console.log(executeAfterFiveSeconds(sayHello));
