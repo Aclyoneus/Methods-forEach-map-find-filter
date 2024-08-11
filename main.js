@@ -147,3 +147,19 @@ function sayHello() {
 }
 
 console.log(executeAfterFiveSeconds(sayHello));
+
+// 11
+
+function getRandomIntegerGenerator(lowestNumber, highestNumber) {
+    function randomInteger(minimumInteger, maximumInteger) {
+        return Math.floor(Math.random() * (maximumInteger - minimumInteger + 1)) + minimumInteger;
+    }
+    return function() {
+        return randomInteger(lowestNumber, highestNumber);
+    };
+}
+
+const getRandomDigit = getRandomIntegerGenerator(0, 9);
+getRandomDigit();
+
+console.log(getRandomIntegerGenerator(-10, 10)());
