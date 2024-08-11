@@ -152,38 +152,38 @@ function getRandomIntegerGenerator(lowestNumber, highestNumber) {
     return getRandomInteger;
 }
 
-// const getRandomDigit = getRandomIntegerGenerator(0, 9);
-// getRandomDigit();
+const getMeRandomDigit = getRandomIntegerGenerator(0, 9);
+getMeRandomDigit();
 
 console.log(getRandomIntegerGenerator(-10, 10)());
 
 // 12
 
-// const redApple = {
-//     color: 'red',
-//     weightInGrams: 150
-// };
-//
-// function findObjectProperty(object, callback) {
-//
-// }
-//
-// const propertyName = findObjectProperty(redApple, function(propertyValue) {
-//     return propertyValue === 'red';
-// });
-// console.log(propertyName); // color
-//
-// const john = {
-//     name: 'John',
-//     bestFriend: {
-//         name: 'Adam'
-//     }
-// };
-//
-// const adamPropertyName = findObjectProperty(john, function(propertyValue) {
-//     return propertyValue && propertyValue.name === 'Adam';
-// });
-// console.log(adamPropertyName); // bestFriend
+const redApple = {
+    color: 'red',
+    weightInGrams: 150
+};
+
+function findObjectProperty(object, callback) {
+    
+}
+
+const propertyName = findObjectProperty(redApple, function(propertyValue) {
+    return propertyValue === 'red';
+});
+console.log(propertyName); // color
+
+const john = {
+    name: 'John',
+    bestFriend: {
+        name: 'Adam'
+    }
+};
+
+const adamPropertyName = findObjectProperty(john, function(propertyValue) {
+    return propertyValue && propertyValue.name === 'Adam';
+});
+console.log(adamPropertyName); // bestFriend
 
 // 13
 
@@ -197,10 +197,10 @@ function getRandomCharacterGenerator(string) {
 }
 
 const getRandomDigit = getRandomCharacterGenerator('0123456789');
-console.log(getRandomDigit()); // returns a random string that contains a single digit
+console.log(getRandomDigit());
 
 const getRandomABC = getRandomCharacterGenerator('abcABC');
-console.log(getRandomABC()); // returns a random string that is a, A, b, B, c, or C
+console.log(getRandomABC());
 
 // 14
 
@@ -212,14 +212,14 @@ function getPrefixedStringGenerator(prefix) {
 }
 
 const prefixStringWithMister = getPrefixedStringGenerator('Mr.');
-console.log(prefixStringWithMister(' John')); // Mr. John
-console.log(prefixStringWithMister(' Adam')); // Mr. Adam
+console.log(prefixStringWithMister(' John'));
+console.log(prefixStringWithMister(' Adam'));
 
 const prefixStringWithMiss = getPrefixedStringGenerator('Ms.');
-console.log(prefixStringWithMiss(' Kate')); // Ms. Kate
-console.log(prefixStringWithMiss(' Julie')); // Ms. Julie
+console.log(prefixStringWithMiss(' Kate'));
+console.log(prefixStringWithMiss(' Julie'));
 
 const prefixStringWithNegative = getPrefixedStringGenerator('un');
-console.log(prefixStringWithNegative('happy')); // unhappy
-console.log(prefixStringWithNegative('productive')); // unproductive
-console.log(prefixStringWithNegative('fair')); // unfair
+console.log(prefixStringWithNegative('happy'));
+console.log(prefixStringWithNegative('productive'));
+console.log(prefixStringWithNegative('fair'));
