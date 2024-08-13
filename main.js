@@ -15,13 +15,13 @@ function getDeltaFunction(numbersObject) {
 }
 
 const getDelta = getDeltaFunction({ a: 1, b: 2, c: 3 });
-console.log(getDelta()); // -8
-console.log(getDelta({ b: 12 })); // 132
-console.log(getDelta({ a: 4, b: 10 })); // 52
-console.log(getDelta({ a: 4, b: 0 })); // -48
+console.log(getDelta());
+console.log(getDelta({ b: 12 }));
+console.log(getDelta({ a: 4, b: 10 }));
+console.log(getDelta({ a: 4, b: 0 }));
 
 // The nested function returns NaN if any of the arguments are missing
-console.log(getDeltaFunction({ a: 1, c: 3 })()); // NaN
+console.log(getDeltaFunction({ a: 1, c: 3 })());
 console.log(getDeltaFunction({ a: 1, c: 3 })({ b: 15 })); // 213
 
 // 2
@@ -165,13 +165,17 @@ const redApple = {
 };
 
 function findObjectProperty(object, callback) {
-    
+    const arrayOfKeys = Object.keys(object);
+    const objectProperty = arrayOfKeys.find(function(key) {
+        return callback(object[key]);
+    });
+    return objectProperty;
 }
 
 const propertyName = findObjectProperty(redApple, function(propertyValue) {
     return propertyValue === 'red';
 });
-console.log(propertyName); // color
+console.log(propertyName);
 
 const john = {
     name: 'John',
@@ -183,7 +187,7 @@ const john = {
 const adamPropertyName = findObjectProperty(john, function(propertyValue) {
     return propertyValue && propertyValue.name === 'Adam';
 });
-console.log(adamPropertyName); // bestFriend
+console.log(adamPropertyName);
 
 // 13
 
