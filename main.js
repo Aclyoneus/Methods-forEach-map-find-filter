@@ -1,14 +1,10 @@
 // 1
 
 function getDeltaFunction(numbersObject) {
-    let a = numbersObject.a;
-    let b = numbersObject.b;
-    let c = numbersObject.c;
-
     function getDelta(newNumbersObject = {}) {
-        a = newNumbersObject.a ?? a;
-        b = newNumbersObject.b ?? b;
-        c = newNumbersObject.c ?? c;
+        const a = newNumbersObject.a ?? numbersObject.a;
+        const b = newNumbersObject.b ?? numbersObject.b;
+        const c = newNumbersObject.c ?? numbersObject.c;
         return (b * b) - 4 * a * c;
     }
     return getDelta;
@@ -40,17 +36,41 @@ console.log(getPositiveSum([1, 2, 3, 4, 5]));
 
 // 3
 
-function countSheeps(sheepArray) {
+function countSheep(sheepArray) {
     const isSheepPresent = sheepArray.filter(function(boolean){
         return boolean === true;
     });
     return isSheepPresent.length;
 }
 
-console.log(countSheeps([true, true, true, false,
-    true, true, true, true, true, false, true, false,
-    true, false, false, true, true, true, true, true,
-    false, false, true, true]));
+console.log(
+    countSheep([
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        true,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        true,
+        true
+    ])
+);
 
 // 4
 
@@ -98,10 +118,9 @@ console.log(calculateAverage([1, 2, 3, 4, 5]));
 // 8
 
 function isStringInArray(stringArray, searchedString){
-    const foundString =  stringArray.find(function(string) {
+    return stringArray.find(function(string) {
         return string === searchedString;
-    });
-    return foundString === searchedString;
+    }) !== undefined;
 }
 
 console.log(isStringInArray(['Orange', 'Apple'], 'Apple'));
