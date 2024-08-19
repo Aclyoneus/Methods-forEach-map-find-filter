@@ -15,8 +15,6 @@ console.log(getDelta());
 console.log(getDelta({ b: 12 }));
 console.log(getDelta({ a: 4, b: 10 }));
 console.log(getDelta({ a: 4, b: 0 }));
-
-// The nested function returns NaN if any of the arguments are missing
 console.log(getDeltaFunction({ a: 1, c: 3 })());
 console.log(getDeltaFunction({ a: 1, c: 3 })({ b: 15 })); // 213
 
@@ -118,9 +116,10 @@ console.log(calculateAverage([1, 2, 3, 4, 5]));
 // 8
 
 function isStringInArray(stringArray, searchedString){
-    return stringArray.find(function(string) {
+    const foundString = stringArray.find(function(string) {
         return string === searchedString;
-    }) !== undefined;
+    });
+    return foundString !== undefined;
 }
 
 console.log(isStringInArray(['Orange', 'Apple'], 'Apple'));
